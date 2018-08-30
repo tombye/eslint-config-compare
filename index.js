@@ -29,12 +29,6 @@ const diffOptionsResults = results.filter(result => result.bothHaveRule && resul
 
 const context = {
   heading: `Comparison of ${standardRuleset.name} and ${xoRuleset.name} ESLint rules`,
-  tableIds: [
-    'rules-both-agree-on',
-    'rules-both-set-but-with-different-error-levels',
-    'rules-both-set-but-with-different-options',
-    'all-eslint-rules'
-  ],
   tableHeadings: [
     'Rules both agree on',
     'Rules both set but with different error levels',
