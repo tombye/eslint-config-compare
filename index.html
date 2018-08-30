@@ -1,0 +1,3151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <style>
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  table td, table th {
+    border: solid 1px #333;
+    padding: 0.5em;
+  }
+
+  table td {
+    vertical-align: top;
+  }
+
+  .table-rule {
+    width: 15%;
+  }
+
+  .table-description {
+    width: 30%;
+  }
+</style>
+  </head>
+  <body>
+    <main>
+    <h1>Comparison of StandardJS and XO ESLint rules</h1>
+
+<h2>Rules both agree on (13)</h2>
+<table>
+  <thead>
+    <tr>
+      <th class="table-rule" rowspan="2">Rule</th>
+      <th class="table-description" rowspan="2">Description</th>
+      <th colspan="2">Error level</th>
+      <th colspan="2">Options</th>
+    </tr>
+    <tr><th>StandardJS</th><th>XO</th><th>StandardJS</th><th>XO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td><a href="https://eslint.org/docs/rules/arrow-spacing">arrow-spacing</a></td>
+    <td>enforce consistent spacing before and after the arrow in arrow functions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "before": true,
+    "after": true
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "before": true,
+    "after": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/comma-spacing">comma-spacing</a></td>
+    <td>enforce consistent spacing before and after commas</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "before": false,
+    "after": true
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "before": false,
+    "after": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/comma-style">comma-style</a></td>
+    <td>enforce consistent comma style</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "last"
+]</pre></td>
+    <td><pre>[
+  "last"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/dot-location">dot-location</a></td>
+    <td>enforce consistent newlines before and after dots</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "property"
+]</pre></td>
+    <td><pre>[
+  "property"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/func-call-spacing">func-call-spacing</a></td>
+    <td>require or disallow spacing between function identifiers and their invocations</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/key-spacing">key-spacing</a></td>
+    <td>enforce consistent spacing between keys and values in object literal properties</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "beforeColon": false,
+    "afterColon": true
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "beforeColon": false,
+    "afterColon": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/rest-spread-spacing">rest-spread-spacing</a></td>
+    <td>enforce spacing between rest and spread operators and their expressions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/semi-spacing">semi-spacing</a></td>
+    <td>enforce consistent spacing before and after semicolons</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "before": false,
+    "after": true
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "before": false,
+    "after": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/space-before-blocks">space-before-blocks</a></td>
+    <td>enforce consistent spacing before blocks</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "always"
+]</pre></td>
+    <td><pre>[
+  "always"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/space-in-parens">space-in-parens</a></td>
+    <td>enforce consistent spacing inside parentheses</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/template-tag-spacing">template-tag-spacing</a></td>
+    <td>require or disallow spacing between template tags and their literals</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/unicode-bom">unicode-bom</a></td>
+    <td>require or disallow Unicode byte order mark (BOM)</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/yield-star-spacing">yield-star-spacing</a></td>
+    <td>require or disallow spacing around the `*` in `yield*` expressions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "both"
+]</pre></td>
+    <td><pre>[
+  "both"
+]</pre></td>
+  </tr>
+  </tbody>
+</table>
+
+<h2>Rules both set but with different error levels (1)</h2>
+<table>
+  <thead>
+    <tr>
+      <th class="table-rule" rowspan="2">Rule</th>
+      <th class="table-description" rowspan="2">Description</th>
+      <th colspan="2">Error level</th>
+      <th colspan="2">Options</th>
+    </tr>
+    <tr><th>StandardJS</th><th>XO</th><th>StandardJS</th><th>XO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td><a href="https://eslint.org/docs/rules/handle-callback-err">handle-callback-err</a></td>
+    <td>require error handling in callbacks</td>
+    <td>error</td>
+    <td>warn</td>
+    <td><pre>[
+  "^(err|error)$"
+]</pre></td>
+    <td><pre></pre></td>
+  </tr>
+  </tbody>
+</table>
+
+<h2>Rules both set but with different options (35)</h2>
+<table>
+  <thead>
+    <tr>
+      <th class="table-rule" rowspan="2">Rule</th>
+      <th class="table-description" rowspan="2">Description</th>
+      <th colspan="2">Error level</th>
+      <th colspan="2">Options</th>
+    </tr>
+    <tr><th>StandardJS</th><th>XO</th><th>StandardJS</th><th>XO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td><a href="https://eslint.org/docs/rules/brace-style">brace-style</a></td>
+    <td>enforce consistent brace style for blocks</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "1tbs",
+  {
+    "allowSingleLine": true
+  }
+]</pre></td>
+    <td><pre>[
+  "1tbs",
+  {
+    "allowSingleLine": false
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/camelcase">camelcase</a></td>
+    <td>enforce camelcase naming convention</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "properties": "never"
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "properties": "always"
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/comma-dangle">comma-dangle</a></td>
+    <td>require or disallow trailing commas</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "arrays": "never",
+    "objects": "never",
+    "imports": "never",
+    "exports": "never",
+    "functions": "never"
+  }
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/curly">curly</a></td>
+    <td>enforce consistent brace style for all control statements</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "multi-line"
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/eqeqeq">eqeqeq</a></td>
+    <td>require the use of `===` and `!==`</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "always",
+  {
+    "null": "ignore"
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/generator-star-spacing">generator-star-spacing</a></td>
+    <td>enforce consistent spacing around `*` operators in generator functions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "before": true,
+    "after": true
+  }
+]</pre></td>
+    <td><pre>[
+  "both"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/handle-callback-err">handle-callback-err</a></td>
+    <td>require error handling in callbacks</td>
+    <td>error</td>
+    <td>warn</td>
+    <td><pre>[
+  "^(err|error)$"
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/indent">indent</a></td>
+    <td>enforce consistent indentation</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  2,
+  {
+    "SwitchCase": 1,
+    "VariableDeclarator": 1,
+    "outerIIFEBody": 1,
+    "MemberExpression": 1,
+    "FunctionDeclaration": {
+      "parameters": 1,
+      "body": 1
+    },
+    "FunctionExpression": {
+      "parameters": 1,
+      "body": 1
+    },
+    "CallExpression": {
+      "arguments": 1
+    },
+    "ArrayExpression": 1,
+    "ObjectExpression": 1,
+    "ImportDeclaration": 1,
+    "flatTernaryExpressions": false,
+    "ignoreComments": false
+  }
+]</pre></td>
+    <td><pre>[
+  "tab",
+  {
+    "SwitchCase": 1
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/keyword-spacing">keyword-spacing</a></td>
+    <td>enforce consistent spacing before and after keywords</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "before": true,
+    "after": true
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/new-cap">new-cap</a></td>
+    <td>require constructor names to begin with a capital letter</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "newIsCap": true,
+    "capIsNew": false
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "newIsCap": true,
+    "capIsNew": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-constant-condition">no-constant-condition</a></td>
+    <td>disallow constant expressions in conditions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "checkLoops": false
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-inner-declarations">no-inner-declarations</a></td>
+    <td>disallow variable or `function` declarations in nested blocks</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "functions"
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-labels">no-labels</a></td>
+    <td>disallow labeled statements</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "allowLoop": false,
+    "allowSwitch": false
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-mixed-operators">no-mixed-operators</a></td>
+    <td>disallow mixed binary operators</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "groups": [
+      [
+        "==",
+        "!=",
+        "===",
+        "!==",
+        ">",
+        ">=",
+        "<",
+        "<="
+      ],
+      [
+        "&&",
+        "||"
+      ],
+      [
+        "in",
+        "instanceof"
+      ]
+    ],
+    "allowSamePrecedence": true
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-multiple-empty-lines">no-multiple-empty-lines</a></td>
+    <td>disallow multiple empty lines</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "max": 1,
+    "maxEOF": 0
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "max": 1
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-return-assign">no-return-assign</a></td>
+    <td>disallow assignment operators in `return` statements</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "except-parens"
+]</pre></td>
+    <td><pre>[
+  "always"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-self-assign">no-self-assign</a></td>
+    <td>disallow assignments where both sides are exactly the same</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  {
+    "props": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-undef">no-undef</a></td>
+    <td>disallow the use of undeclared variables unless mentioned in `/*global */` comments</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  {
+    "typeof": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-unneeded-ternary">no-unneeded-ternary</a></td>
+    <td>disallow ternary operators when simpler alternatives exist</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "defaultAssignment": false
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-unused-expressions">no-unused-expressions</a></td>
+    <td>disallow unused expressions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "allowShortCircuit": true,
+    "allowTernary": true,
+    "allowTaggedTemplates": true
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-unused-vars">no-unused-vars</a></td>
+    <td>disallow unused variables</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "vars": "all",
+    "args": "none",
+    "ignoreRestSiblings": true
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "ignoreRestSiblings": true,
+    "argsIgnorePattern": "^_$"
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-use-before-define">no-use-before-define</a></td>
+    <td>disallow the use of variables before they are defined</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "functions": false,
+    "classes": false,
+    "variables": false
+  }
+]</pre></td>
+    <td><pre>[
+  "nofunc"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/one-var">one-var</a></td>
+    <td>enforce variables to be declared either together or separately in functions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "initialized": "never"
+  }
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/operator-linebreak">operator-linebreak</a></td>
+    <td>enforce consistent linebreak style for operators</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "after",
+  {
+    "overrides": {
+      "?": "before",
+      ":": "before"
+    }
+  }
+]</pre></td>
+    <td><pre>[
+  "after"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/padded-blocks">padded-blocks</a></td>
+    <td>require or disallow padding within blocks</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "blocks": "never",
+    "switches": "never",
+    "classes": "never"
+  }
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/prefer-promise-reject-errors">prefer-promise-reject-errors</a></td>
+    <td>require using Error objects as Promise rejection reasons</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  {
+    "allowEmptyReject": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/quotes">quotes</a></td>
+    <td>enforce the consistent use of either backticks, double, or single quotes</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "single",
+  {
+    "avoidEscape": true,
+    "allowTemplateLiterals": true
+  }
+]</pre></td>
+    <td><pre>[
+  "single",
+  {
+    "allowTemplateLiterals": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/semi">semi</a></td>
+    <td>require or disallow semicolons instead of ASI</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre>[
+  "always"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/space-before-function-paren">space-before-function-paren</a></td>
+    <td>enforce consistent spacing before `function` definition opening parenthesis</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "always"
+]</pre></td>
+    <td><pre>[
+  {
+    "anonymous": "always",
+    "named": "never",
+    "asyncArrow": "always"
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/space-unary-ops">space-unary-ops</a></td>
+    <td>enforce consistent spacing before or after unary operators</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "words": true,
+    "nonwords": false
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/spaced-comment">spaced-comment</a></td>
+    <td>enforce consistent spacing after the `//` or `/*` in a comment</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "always",
+  {
+    "line": {
+      "markers": [
+        "*package",
+        "!",
+        "/",
+        ",",
+        "="
+      ]
+    },
+    "block": {
+      "balanced": true,
+      "markers": [
+        "*package",
+        "!",
+        ",",
+        ":",
+        "::",
+        "flow-include"
+      ],
+      "exceptions": [
+        "*"
+      ]
+    }
+  }
+]</pre></td>
+    <td><pre>[
+  "always",
+  {
+    "line": {
+      "exceptions": [
+        "-",
+        "+",
+        "*"
+      ],
+      "markers": [
+        "!",
+        "/"
+      ]
+    },
+    "block": {
+      "exceptions": [
+        "-",
+        "+",
+        "*"
+      ],
+      "markers": [
+        "!",
+        "*"
+      ],
+      "balanced": true
+    }
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/template-curly-spacing">template-curly-spacing</a></td>
+    <td>require or disallow spacing around embedded expressions of template strings</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/valid-typeof">valid-typeof</a></td>
+    <td>enforce comparing `typeof` expressions against valid strings</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "requireStringLiterals": true
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "requireStringLiterals": false
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/wrap-iife">wrap-iife</a></td>
+    <td>require parentheses around immediate `function` invocations</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "any",
+  {
+    "functionPrototypeMethods": true
+  }
+]</pre></td>
+    <td><pre>[
+  "inside",
+  {
+    "functionPrototypeMethods": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/yoda">yoda</a></td>
+    <td>require or disallow "Yoda" conditions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre></pre></td>
+  </tr>
+  </tbody>
+</table>
+
+<h2>All ESlint rules (264)</h2>
+<table>
+  <thead>
+    <tr>
+      <th class="table-rule" rowspan="2">Rule</th>
+      <th class="table-description" rowspan="2">Description</th>
+      <th colspan="2">Error level</th>
+      <th colspan="2">Options</th>
+    </tr>
+    <tr><th>StandardJS</th><th>XO</th><th>StandardJS</th><th>XO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td><a href="https://eslint.org/docs/rules/accessor-pairs">accessor-pairs</a></td>
+    <td>enforce getter and setter pairs in objects</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/array-bracket-newline">array-bracket-newline</a></td>
+    <td>enforce linebreaks after opening and before closing array brackets</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "consistent"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/array-bracket-spacing">array-bracket-spacing</a></td>
+    <td>enforce consistent spacing inside array brackets</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/array-callback-return">array-callback-return</a></td>
+    <td>enforce `return` statements in callbacks of array methods</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/array-element-newline">array-element-newline</a></td>
+    <td>enforce line breaks after each array element</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "consistent"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/arrow-body-style">arrow-body-style</a></td>
+    <td>require braces around arrow function bodies</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/arrow-parens">arrow-parens</a></td>
+    <td>require parentheses around arrow function arguments</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "as-needed"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/arrow-spacing">arrow-spacing</a></td>
+    <td>enforce consistent spacing before and after the arrow in arrow functions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "before": true,
+    "after": true
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "before": true,
+    "after": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/block-scoped-var">block-scoped-var</a></td>
+    <td>enforce the use of variables within the scope they are defined</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/block-spacing">block-spacing</a></td>
+    <td>disallow or enforce spaces inside of blocks after opening block and before closing block</td>
+    <td>error</td>
+    <td></td>
+    <td><pre>[
+  "always"
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/brace-style">brace-style</a></td>
+    <td>enforce consistent brace style for blocks</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "1tbs",
+  {
+    "allowSingleLine": true
+  }
+]</pre></td>
+    <td><pre>[
+  "1tbs",
+  {
+    "allowSingleLine": false
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/callback-return">callback-return</a></td>
+    <td>require `return` statements after callbacks</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/camelcase">camelcase</a></td>
+    <td>enforce camelcase naming convention</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "properties": "never"
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "properties": "always"
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/capitalized-comments">capitalized-comments</a></td>
+    <td>enforce or disallow capitalization of the first letter of a comment</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "always",
+  {
+    "ignorePattern": "pragma|ignore|prettier-ignore",
+    "ignoreInlineComments": true,
+    "ignoreConsecutiveComments": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/class-methods-use-this">class-methods-use-this</a></td>
+    <td>enforce that class methods utilize `this`</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/comma-dangle">comma-dangle</a></td>
+    <td>require or disallow trailing commas</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "arrays": "never",
+    "objects": "never",
+    "imports": "never",
+    "exports": "never",
+    "functions": "never"
+  }
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/comma-spacing">comma-spacing</a></td>
+    <td>enforce consistent spacing before and after commas</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "before": false,
+    "after": true
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "before": false,
+    "after": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/comma-style">comma-style</a></td>
+    <td>enforce consistent comma style</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "last"
+]</pre></td>
+    <td><pre>[
+  "last"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/complexity">complexity</a></td>
+    <td>enforce a maximum cyclomatic complexity allowed in a program</td>
+    <td></td>
+    <td>warn</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/computed-property-spacing">computed-property-spacing</a></td>
+    <td>enforce consistent spacing inside computed property brackets</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/consistent-return">consistent-return</a></td>
+    <td>require `return` statements to either always or never specify values</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/consistent-this">consistent-this</a></td>
+    <td>enforce consistent naming when capturing the current execution context</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/constructor-super">constructor-super</a></td>
+    <td>require `super()` calls in constructors</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/curly">curly</a></td>
+    <td>enforce consistent brace style for all control statements</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "multi-line"
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/default-case">default-case</a></td>
+    <td>require `default` cases in `switch` statements</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/dot-location">dot-location</a></td>
+    <td>enforce consistent newlines before and after dots</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "property"
+]</pre></td>
+    <td><pre>[
+  "property"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/dot-notation">dot-notation</a></td>
+    <td>enforce dot notation whenever possible</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/eol-last">eol-last</a></td>
+    <td>require or disallow newline at the end of files</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/eqeqeq">eqeqeq</a></td>
+    <td>require the use of `===` and `!==`</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "always",
+  {
+    "null": "ignore"
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/for-direction">for-direction</a></td>
+    <td>enforce "for" loop update clause moving the counter in the right direction.</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/func-call-spacing">func-call-spacing</a></td>
+    <td>require or disallow spacing between function identifiers and their invocations</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/func-name-matching">func-name-matching</a></td>
+    <td>require function names to match the name of the variable or property to which they are assigned</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  {
+    "considerPropertyDescriptor": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/func-names">func-names</a></td>
+    <td>require or disallow named `function` expressions</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/func-style">func-style</a></td>
+    <td>enforce the consistent use of either `function` declarations or expressions</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/function-paren-newline">function-paren-newline</a></td>
+    <td>enforce consistent line breaks inside function parentheses</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/generator-star-spacing">generator-star-spacing</a></td>
+    <td>enforce consistent spacing around `*` operators in generator functions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "before": true,
+    "after": true
+  }
+]</pre></td>
+    <td><pre>[
+  "both"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/getter-return">getter-return</a></td>
+    <td>enforce `return` statements in getters</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/global-require">global-require</a></td>
+    <td>require `require()` calls to be placed at top-level module scope</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/guard-for-in">guard-for-in</a></td>
+    <td>require `for-in` loops to include an `if` statement</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/handle-callback-err">handle-callback-err</a></td>
+    <td>require error handling in callbacks</td>
+    <td>error</td>
+    <td>warn</td>
+    <td><pre>[
+  "^(err|error)$"
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/id-blacklist">id-blacklist</a></td>
+    <td>disallow specified identifiers</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/id-length">id-length</a></td>
+    <td>enforce minimum and maximum identifier lengths</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/id-match">id-match</a></td>
+    <td>require identifiers to match a specified regular expression</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/implicit-arrow-linebreak">implicit-arrow-linebreak</a></td>
+    <td>enforce the location of arrow function bodies</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/indent-legacy">indent-legacy</a></td>
+    <td>enforce consistent indentation</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/indent">indent</a></td>
+    <td>enforce consistent indentation</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  2,
+  {
+    "SwitchCase": 1,
+    "VariableDeclarator": 1,
+    "outerIIFEBody": 1,
+    "MemberExpression": 1,
+    "FunctionDeclaration": {
+      "parameters": 1,
+      "body": 1
+    },
+    "FunctionExpression": {
+      "parameters": 1,
+      "body": 1
+    },
+    "CallExpression": {
+      "arguments": 1
+    },
+    "ArrayExpression": 1,
+    "ObjectExpression": 1,
+    "ImportDeclaration": 1,
+    "flatTernaryExpressions": false,
+    "ignoreComments": false
+  }
+]</pre></td>
+    <td><pre>[
+  "tab",
+  {
+    "SwitchCase": 1
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/init-declarations">init-declarations</a></td>
+    <td>require or disallow initialization in variable declarations</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/jsx-quotes">jsx-quotes</a></td>
+    <td>enforce the consistent use of either double or single quotes in JSX attributes</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/key-spacing">key-spacing</a></td>
+    <td>enforce consistent spacing between keys and values in object literal properties</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "beforeColon": false,
+    "afterColon": true
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "beforeColon": false,
+    "afterColon": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/keyword-spacing">keyword-spacing</a></td>
+    <td>enforce consistent spacing before and after keywords</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "before": true,
+    "after": true
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/line-comment-position">line-comment-position</a></td>
+    <td>enforce position of line comments</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/linebreak-style">linebreak-style</a></td>
+    <td>enforce consistent linebreak style</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "unix"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/lines-around-comment">lines-around-comment</a></td>
+    <td>require empty lines around comments</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/lines-around-directive">lines-around-directive</a></td>
+    <td>require or disallow newlines around directives</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/lines-between-class-members">lines-between-class-members</a></td>
+    <td>require or disallow an empty line between class members</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "always"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/max-classes-per-file">max-classes-per-file</a></td>
+    <td>enforce a maximum number of classes per file</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/max-depth">max-depth</a></td>
+    <td>enforce a maximum depth that blocks can be nested</td>
+    <td></td>
+    <td>warn</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/max-len">max-len</a></td>
+    <td>enforce a maximum line length</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/max-lines-per-function">max-lines-per-function</a></td>
+    <td>enforce a maximum number of line of code in a function</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/max-lines">max-lines</a></td>
+    <td>enforce a maximum number of lines per file</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/max-nested-callbacks">max-nested-callbacks</a></td>
+    <td>enforce a maximum depth that callbacks can be nested</td>
+    <td></td>
+    <td>warn</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  4
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/max-params">max-params</a></td>
+    <td>enforce a maximum number of parameters in function definitions</td>
+    <td></td>
+    <td>warn</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  {
+    "max": 4
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/max-statements-per-line">max-statements-per-line</a></td>
+    <td>enforce a maximum number of statements allowed per line</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/max-statements">max-statements</a></td>
+    <td>enforce a maximum number of statements allowed in function blocks</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/multiline-comment-style">multiline-comment-style</a></td>
+    <td>enforce a particular style for multiline comments</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/multiline-ternary">multiline-ternary</a></td>
+    <td>enforce newlines between operands of ternary expressions</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/new-cap">new-cap</a></td>
+    <td>require constructor names to begin with a capital letter</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "newIsCap": true,
+    "capIsNew": false
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "newIsCap": true,
+    "capIsNew": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/new-parens">new-parens</a></td>
+    <td>require parentheses when invoking a constructor with no arguments</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/newline-after-var">newline-after-var</a></td>
+    <td>require or disallow an empty line after variable declarations</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/newline-before-return">newline-before-return</a></td>
+    <td>require an empty line before `return` statements</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/newline-per-chained-call">newline-per-chained-call</a></td>
+    <td>require a newline after each call in a method chain</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-alert">no-alert</a></td>
+    <td>disallow the use of `alert`, `confirm`, and `prompt`</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-array-constructor">no-array-constructor</a></td>
+    <td>disallow `Array` constructors</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-async-promise-executor">no-async-promise-executor</a></td>
+    <td>disallow using an async function as a Promise executor</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-await-in-loop">no-await-in-loop</a></td>
+    <td>disallow `await` inside of loops</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-bitwise">no-bitwise</a></td>
+    <td>disallow bitwise operators</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-buffer-constructor">no-buffer-constructor</a></td>
+    <td>disallow use of the `Buffer()` constructor</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-caller">no-caller</a></td>
+    <td>disallow the use of `arguments.caller` or `arguments.callee`</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-case-declarations">no-case-declarations</a></td>
+    <td>disallow lexical declarations in case clauses</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-catch-shadow">no-catch-shadow</a></td>
+    <td>disallow `catch` clause parameters from shadowing variables in the outer scope</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-class-assign">no-class-assign</a></td>
+    <td>disallow reassigning class members</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-compare-neg-zero">no-compare-neg-zero</a></td>
+    <td>disallow comparing against -0</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-cond-assign">no-cond-assign</a></td>
+    <td>disallow assignment operators in conditional expressions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-confusing-arrow">no-confusing-arrow</a></td>
+    <td>disallow arrow functions where they could be confused with comparisons</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-console">no-console</a></td>
+    <td>disallow the use of `console`</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-const-assign">no-const-assign</a></td>
+    <td>disallow reassigning `const` variables</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-constant-condition">no-constant-condition</a></td>
+    <td>disallow constant expressions in conditions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "checkLoops": false
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-continue">no-continue</a></td>
+    <td>disallow `continue` statements</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-control-regex">no-control-regex</a></td>
+    <td>disallow control characters in regular expressions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-debugger">no-debugger</a></td>
+    <td>disallow the use of `debugger`</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-delete-var">no-delete-var</a></td>
+    <td>disallow deleting variables</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-div-regex">no-div-regex</a></td>
+    <td>disallow division operators explicitly at the beginning of regular expressions</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-dupe-args">no-dupe-args</a></td>
+    <td>disallow duplicate arguments in `function` definitions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-dupe-class-members">no-dupe-class-members</a></td>
+    <td>disallow duplicate class members</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-dupe-keys">no-dupe-keys</a></td>
+    <td>disallow duplicate keys in object literals</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-duplicate-case">no-duplicate-case</a></td>
+    <td>disallow duplicate case labels</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-duplicate-imports">no-duplicate-imports</a></td>
+    <td>disallow duplicate module imports</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-else-return">no-else-return</a></td>
+    <td>disallow `else` blocks after `return` statements in `if` statements</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  {
+    "allowElseIf": false
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-empty-character-class">no-empty-character-class</a></td>
+    <td>disallow empty character classes in regular expressions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-empty-function">no-empty-function</a></td>
+    <td>disallow empty functions</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-empty-pattern">no-empty-pattern</a></td>
+    <td>disallow empty destructuring patterns</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-empty">no-empty</a></td>
+    <td>disallow empty block statements</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  {
+    "allowEmptyCatch": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-eq-null">no-eq-null</a></td>
+    <td>disallow `null` comparisons without type-checking operators</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-eval">no-eval</a></td>
+    <td>disallow the use of `eval()`</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-ex-assign">no-ex-assign</a></td>
+    <td>disallow reassigning exceptions in `catch` clauses</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-extend-native">no-extend-native</a></td>
+    <td>disallow extending native types</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-extra-bind">no-extra-bind</a></td>
+    <td>disallow unnecessary calls to `.bind()`</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-extra-boolean-cast">no-extra-boolean-cast</a></td>
+    <td>disallow unnecessary boolean casts</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-extra-label">no-extra-label</a></td>
+    <td>disallow unnecessary labels</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-extra-parens">no-extra-parens</a></td>
+    <td>disallow unnecessary parentheses</td>
+    <td>error</td>
+    <td></td>
+    <td><pre>[
+  "functions"
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-extra-semi">no-extra-semi</a></td>
+    <td>disallow unnecessary semicolons</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-fallthrough">no-fallthrough</a></td>
+    <td>disallow fallthrough of `case` statements</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-floating-decimal">no-floating-decimal</a></td>
+    <td>disallow leading or trailing decimal points in numeric literals</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-func-assign">no-func-assign</a></td>
+    <td>disallow reassigning `function` declarations</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-global-assign">no-global-assign</a></td>
+    <td>disallow assignments to native objects or read-only global variables</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-implicit-coercion">no-implicit-coercion</a></td>
+    <td>disallow shorthand type conversions</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-implicit-globals">no-implicit-globals</a></td>
+    <td>disallow variable and `function` declarations in the global scope</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-implied-eval">no-implied-eval</a></td>
+    <td>disallow the use of `eval()`-like methods</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-inline-comments">no-inline-comments</a></td>
+    <td>disallow inline comments after code</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-inner-declarations">no-inner-declarations</a></td>
+    <td>disallow variable or `function` declarations in nested blocks</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "functions"
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-invalid-regexp">no-invalid-regexp</a></td>
+    <td>disallow invalid regular expression strings in `RegExp` constructors</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-invalid-this">no-invalid-this</a></td>
+    <td>disallow `this` keywords outside of classes or class-like objects</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-irregular-whitespace">no-irregular-whitespace</a></td>
+    <td>disallow irregular whitespace outside of strings and comments</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-iterator">no-iterator</a></td>
+    <td>disallow the use of the `__iterator__` property</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-label-var">no-label-var</a></td>
+    <td>disallow labels that share a name with a variable</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-labels">no-labels</a></td>
+    <td>disallow labeled statements</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "allowLoop": false,
+    "allowSwitch": false
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-lone-blocks">no-lone-blocks</a></td>
+    <td>disallow unnecessary nested blocks</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-lonely-if">no-lonely-if</a></td>
+    <td>disallow `if` statements as the only statement in `else` blocks</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-loop-func">no-loop-func</a></td>
+    <td>disallow `function` declarations and expressions inside loop statements</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-magic-numbers">no-magic-numbers</a></td>
+    <td>disallow magic numbers</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-misleading-character-class">no-misleading-character-class</a></td>
+    <td>disallow characters which are made with multiple code points in character class syntax</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-mixed-operators">no-mixed-operators</a></td>
+    <td>disallow mixed binary operators</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "groups": [
+      [
+        "==",
+        "!=",
+        "===",
+        "!==",
+        ">",
+        ">=",
+        "<",
+        "<="
+      ],
+      [
+        "&&",
+        "||"
+      ],
+      [
+        "in",
+        "instanceof"
+      ]
+    ],
+    "allowSamePrecedence": true
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-mixed-requires">no-mixed-requires</a></td>
+    <td>disallow `require` calls to be mixed with regular variable declarations</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  {
+    "grouping": true,
+    "allowCall": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs">no-mixed-spaces-and-tabs</a></td>
+    <td>disallow mixed spaces and tabs for indentation</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-multi-assign">no-multi-assign</a></td>
+    <td>disallow use of chained assignment expressions</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-multi-spaces">no-multi-spaces</a></td>
+    <td>disallow multiple spaces</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-multi-str">no-multi-str</a></td>
+    <td>disallow multiline strings</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-multiple-empty-lines">no-multiple-empty-lines</a></td>
+    <td>disallow multiple empty lines</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "max": 1,
+    "maxEOF": 0
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "max": 1
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-native-reassign">no-native-reassign</a></td>
+    <td>disallow assignments to native objects or read-only global variables</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-negated-condition">no-negated-condition</a></td>
+    <td>disallow negated conditions</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-negated-in-lhs">no-negated-in-lhs</a></td>
+    <td>disallow negating the left operand in `in` expressions</td>
+    <td>error</td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-nested-ternary">no-nested-ternary</a></td>
+    <td>disallow nested ternary expressions</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-new-func">no-new-func</a></td>
+    <td>disallow `new` operators with the `Function` object</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-new-object">no-new-object</a></td>
+    <td>disallow `Object` constructors</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-new-require">no-new-require</a></td>
+    <td>disallow `new` operators with calls to `require`</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-new-symbol">no-new-symbol</a></td>
+    <td>disallow `new` operators with the `Symbol` object</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-new-wrappers">no-new-wrappers</a></td>
+    <td>disallow `new` operators with the `String`, `Number`, and `Boolean` objects</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-new">no-new</a></td>
+    <td>disallow `new` operators outside of assignments or comparisons</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-obj-calls">no-obj-calls</a></td>
+    <td>disallow calling global object properties as functions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-octal-escape">no-octal-escape</a></td>
+    <td>disallow octal escape sequences in string literals</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-octal">no-octal</a></td>
+    <td>disallow octal literals</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-param-reassign">no-param-reassign</a></td>
+    <td>disallow reassigning `function` parameters</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-path-concat">no-path-concat</a></td>
+    <td>disallow string concatenation with `__dirname` and `__filename`</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-plusplus">no-plusplus</a></td>
+    <td>disallow the unary operators `++` and `--`</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-process-env">no-process-env</a></td>
+    <td>disallow the use of `process.env`</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-process-exit">no-process-exit</a></td>
+    <td>disallow the use of `process.exit()`</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-proto">no-proto</a></td>
+    <td>disallow the use of the `__proto__` property</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-prototype-builtins">no-prototype-builtins</a></td>
+    <td>disallow calling some `Object.prototype` methods directly on objects</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-redeclare">no-redeclare</a></td>
+    <td>disallow variable redeclaration</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-regex-spaces">no-regex-spaces</a></td>
+    <td>disallow multiple spaces in regular expressions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-restricted-globals">no-restricted-globals</a></td>
+    <td>disallow specified global variables</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "event"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-restricted-imports">no-restricted-imports</a></td>
+    <td>disallow specified modules when loaded by `import`</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "domain",
+  "freelist",
+  "smalloc",
+  "sys",
+  "colors"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-restricted-modules">no-restricted-modules</a></td>
+    <td>disallow specified modules when loaded by `require`</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "domain",
+  "freelist",
+  "smalloc",
+  "sys",
+  "colors"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-restricted-properties">no-restricted-properties</a></td>
+    <td>disallow certain properties on certain objects</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-restricted-syntax">no-restricted-syntax</a></td>
+    <td>disallow specified syntax</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "WithStatement"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-return-assign">no-return-assign</a></td>
+    <td>disallow assignment operators in `return` statements</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "except-parens"
+]</pre></td>
+    <td><pre>[
+  "always"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-return-await">no-return-await</a></td>
+    <td>disallow unnecessary `return await`</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-script-url">no-script-url</a></td>
+    <td>disallow `javascript:` urls</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-self-assign">no-self-assign</a></td>
+    <td>disallow assignments where both sides are exactly the same</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  {
+    "props": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-self-compare">no-self-compare</a></td>
+    <td>disallow comparisons where both sides are exactly the same</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-sequences">no-sequences</a></td>
+    <td>disallow comma operators</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-shadow-restricted-names">no-shadow-restricted-names</a></td>
+    <td>disallow identifiers from shadowing restricted names</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-shadow">no-shadow</a></td>
+    <td>disallow variable declarations from shadowing variables declared in the outer scope</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-spaced-func">no-spaced-func</a></td>
+    <td>disallow spacing between function identifiers and their applications (deprecated)</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-sparse-arrays">no-sparse-arrays</a></td>
+    <td>disallow sparse arrays</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-sync">no-sync</a></td>
+    <td>disallow synchronous methods</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-tabs">no-tabs</a></td>
+    <td>disallow all tabs</td>
+    <td>error</td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-template-curly-in-string">no-template-curly-in-string</a></td>
+    <td>disallow template literal placeholder syntax in regular strings</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-ternary">no-ternary</a></td>
+    <td>disallow ternary operators</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-this-before-super">no-this-before-super</a></td>
+    <td>disallow `this`/`super` before calling `super()` in constructors</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-throw-literal">no-throw-literal</a></td>
+    <td>disallow throwing literals as exceptions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-trailing-spaces">no-trailing-spaces</a></td>
+    <td>disallow trailing whitespace at the end of lines</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-undef-init">no-undef-init</a></td>
+    <td>disallow initializing variables to `undefined`</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-undef">no-undef</a></td>
+    <td>disallow the use of undeclared variables unless mentioned in `/*global */` comments</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  {
+    "typeof": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-undefined">no-undefined</a></td>
+    <td>disallow the use of `undefined` as an identifier</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-underscore-dangle">no-underscore-dangle</a></td>
+    <td>disallow dangling underscores in identifiers</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-unexpected-multiline">no-unexpected-multiline</a></td>
+    <td>disallow confusing multiline expressions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-unmodified-loop-condition">no-unmodified-loop-condition</a></td>
+    <td>disallow unmodified loop conditions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-unneeded-ternary">no-unneeded-ternary</a></td>
+    <td>disallow ternary operators when simpler alternatives exist</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "defaultAssignment": false
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-unreachable">no-unreachable</a></td>
+    <td>disallow unreachable code after `return`, `throw`, `continue`, and `break` statements</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-unsafe-finally">no-unsafe-finally</a></td>
+    <td>disallow control flow statements in `finally` blocks</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-unsafe-negation">no-unsafe-negation</a></td>
+    <td>disallow negating the left operand of relational operators</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-unused-expressions">no-unused-expressions</a></td>
+    <td>disallow unused expressions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "allowShortCircuit": true,
+    "allowTernary": true,
+    "allowTaggedTemplates": true
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-unused-labels">no-unused-labels</a></td>
+    <td>disallow unused labels</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-unused-vars">no-unused-vars</a></td>
+    <td>disallow unused variables</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "vars": "all",
+    "args": "none",
+    "ignoreRestSiblings": true
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "ignoreRestSiblings": true,
+    "argsIgnorePattern": "^_$"
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-use-before-define">no-use-before-define</a></td>
+    <td>disallow the use of variables before they are defined</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "functions": false,
+    "classes": false,
+    "variables": false
+  }
+]</pre></td>
+    <td><pre>[
+  "nofunc"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-useless-call">no-useless-call</a></td>
+    <td>disallow unnecessary calls to `.call()` and `.apply()`</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-useless-computed-key">no-useless-computed-key</a></td>
+    <td>disallow unnecessary computed property keys in object literals</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-useless-concat">no-useless-concat</a></td>
+    <td>disallow unnecessary concatenation of literals or template literals</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-useless-constructor">no-useless-constructor</a></td>
+    <td>disallow unnecessary constructors</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-useless-escape">no-useless-escape</a></td>
+    <td>disallow unnecessary escape characters</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-useless-rename">no-useless-rename</a></td>
+    <td>disallow renaming import, export, and destructured assignments to the same name</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-useless-return">no-useless-return</a></td>
+    <td>disallow redundant return statements</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-var">no-var</a></td>
+    <td>require `let` or `const` instead of `var`</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-void">no-void</a></td>
+    <td>disallow `void` operators</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-warning-comments">no-warning-comments</a></td>
+    <td>disallow specified warning terms in comments</td>
+    <td></td>
+    <td>warn</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-whitespace-before-property">no-whitespace-before-property</a></td>
+    <td>disallow whitespace before properties</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/no-with">no-with</a></td>
+    <td>disallow `with` statements</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/nonblock-statement-body-position">nonblock-statement-body-position</a></td>
+    <td>enforce the location of single-line statements</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/object-curly-newline">object-curly-newline</a></td>
+    <td>enforce consistent line breaks inside braces</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/object-curly-spacing">object-curly-spacing</a></td>
+    <td>enforce consistent spacing inside braces</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/object-property-newline">object-property-newline</a></td>
+    <td>enforce placing object properties on separate lines</td>
+    <td>error</td>
+    <td></td>
+    <td><pre>[
+  {
+    "allowMultiplePropertiesPerLine": true
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/object-shorthand">object-shorthand</a></td>
+    <td>require or disallow method and property shorthand syntax for object literals</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/one-var-declaration-per-line">one-var-declaration-per-line</a></td>
+    <td>require or disallow newlines around variable declarations</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/one-var">one-var</a></td>
+    <td>enforce variables to be declared either together or separately in functions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "initialized": "never"
+  }
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/operator-assignment">operator-assignment</a></td>
+    <td>require or disallow assignment operator shorthand where possible</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "always"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/operator-linebreak">operator-linebreak</a></td>
+    <td>enforce consistent linebreak style for operators</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "after",
+  {
+    "overrides": {
+      "?": "before",
+      ":": "before"
+    }
+  }
+]</pre></td>
+    <td><pre>[
+  "after"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/padded-blocks">padded-blocks</a></td>
+    <td>require or disallow padding within blocks</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "blocks": "never",
+    "switches": "never",
+    "classes": "never"
+  }
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/padding-line-between-statements">padding-line-between-statements</a></td>
+    <td>require or disallow padding lines between statements</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/prefer-arrow-callback">prefer-arrow-callback</a></td>
+    <td>require using arrow functions for callbacks</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/prefer-const">prefer-const</a></td>
+    <td>require `const` declarations for variables that are never reassigned after declared</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/prefer-destructuring">prefer-destructuring</a></td>
+    <td>require destructuring from arrays and/or objects</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/prefer-numeric-literals">prefer-numeric-literals</a></td>
+    <td>disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/prefer-object-spread">prefer-object-spread</a></td>
+    <td>disallow using Object.assign with an object literal as the first argument and prefer the use of object spread instead.</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/prefer-promise-reject-errors">prefer-promise-reject-errors</a></td>
+    <td>require using Error objects as Promise rejection reasons</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  {
+    "allowEmptyReject": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/prefer-reflect">prefer-reflect</a></td>
+    <td>require `Reflect` methods where applicable</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/prefer-rest-params">prefer-rest-params</a></td>
+    <td>require rest parameters instead of `arguments`</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/prefer-spread">prefer-spread</a></td>
+    <td>require spread operators instead of `.apply()`</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/prefer-template">prefer-template</a></td>
+    <td>require template literals instead of string concatenation</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/quote-props">quote-props</a></td>
+    <td>require quotes around object literal property names</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "as-needed"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/quotes">quotes</a></td>
+    <td>enforce the consistent use of either backticks, double, or single quotes</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "single",
+  {
+    "avoidEscape": true,
+    "allowTemplateLiterals": true
+  }
+]</pre></td>
+    <td><pre>[
+  "single",
+  {
+    "allowTemplateLiterals": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/radix">radix</a></td>
+    <td>enforce the consistent use of the radix argument when using `parseInt()`</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/require-atomic-updates">require-atomic-updates</a></td>
+    <td>disallow assignments that can lead to race conditions due to usage of `await` or `yield`</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/require-await">require-await</a></td>
+    <td>disallow async functions which have no `await` expression</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/require-jsdoc">require-jsdoc</a></td>
+    <td>require JSDoc comments</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/require-unicode-regexp">require-unicode-regexp</a></td>
+    <td>enforce the use of `u` flag on RegExp</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/require-yield">require-yield</a></td>
+    <td>require generator functions to contain `yield`</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/rest-spread-spacing">rest-spread-spacing</a></td>
+    <td>enforce spacing between rest and spread operators and their expressions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/semi-spacing">semi-spacing</a></td>
+    <td>enforce consistent spacing before and after semicolons</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "before": false,
+    "after": true
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "before": false,
+    "after": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/semi-style">semi-style</a></td>
+    <td>enforce location of semicolons</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  "last"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/semi">semi</a></td>
+    <td>require or disallow semicolons instead of ASI</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre>[
+  "always"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/sort-imports">sort-imports</a></td>
+    <td>enforce sorted import declarations within modules</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/sort-keys">sort-keys</a></td>
+    <td>require object keys to be sorted</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/sort-vars">sort-vars</a></td>
+    <td>require variables within the same declaration block to be sorted</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/space-before-blocks">space-before-blocks</a></td>
+    <td>enforce consistent spacing before blocks</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "always"
+]</pre></td>
+    <td><pre>[
+  "always"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/space-before-function-paren">space-before-function-paren</a></td>
+    <td>enforce consistent spacing before `function` definition opening parenthesis</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "always"
+]</pre></td>
+    <td><pre>[
+  {
+    "anonymous": "always",
+    "named": "never",
+    "asyncArrow": "always"
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/space-in-parens">space-in-parens</a></td>
+    <td>enforce consistent spacing inside parentheses</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/space-infix-ops">space-infix-ops</a></td>
+    <td>require spacing around infix operators</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/space-unary-ops">space-unary-ops</a></td>
+    <td>enforce consistent spacing before or after unary operators</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "words": true,
+    "nonwords": false
+  }
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/spaced-comment">spaced-comment</a></td>
+    <td>enforce consistent spacing after the `//` or `/*` in a comment</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "always",
+  {
+    "line": {
+      "markers": [
+        "*package",
+        "!",
+        "/",
+        ",",
+        "="
+      ]
+    },
+    "block": {
+      "balanced": true,
+      "markers": [
+        "*package",
+        "!",
+        ",",
+        ":",
+        "::",
+        "flow-include"
+      ],
+      "exceptions": [
+        "*"
+      ]
+    }
+  }
+]</pre></td>
+    <td><pre>[
+  "always",
+  {
+    "line": {
+      "exceptions": [
+        "-",
+        "+",
+        "*"
+      ],
+      "markers": [
+        "!",
+        "/"
+      ]
+    },
+    "block": {
+      "exceptions": [
+        "-",
+        "+",
+        "*"
+      ],
+      "markers": [
+        "!",
+        "*"
+      ],
+      "balanced": true
+    }
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/strict">strict</a></td>
+    <td>require or disallow strict mode directives</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/switch-colon-spacing">switch-colon-spacing</a></td>
+    <td>enforce spacing around colons of switch statements</td>
+    <td></td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  {
+    "after": true,
+    "before": false
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/symbol-description">symbol-description</a></td>
+    <td>require symbol descriptions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/template-curly-spacing">template-curly-spacing</a></td>
+    <td>require or disallow spacing around embedded expressions of template strings</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/template-tag-spacing">template-tag-spacing</a></td>
+    <td>require or disallow spacing between template tags and their literals</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/unicode-bom">unicode-bom</a></td>
+    <td>require or disallow Unicode byte order mark (BOM)</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre>[
+  "never"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/use-isnan">use-isnan</a></td>
+    <td>require calls to `isNaN()` when checking for `NaN`</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/valid-jsdoc">valid-jsdoc</a></td>
+    <td>enforce valid JSDoc comments</td>
+    <td></td>
+    <td>warn</td>
+    <td><pre></pre></td>
+    <td><pre>[
+  {
+    "requireReturn": false,
+    "requireParamDescription": true,
+    "requireReturnDescription": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/valid-typeof">valid-typeof</a></td>
+    <td>enforce comparing `typeof` expressions against valid strings</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  {
+    "requireStringLiterals": true
+  }
+]</pre></td>
+    <td><pre>[
+  {
+    "requireStringLiterals": false
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/vars-on-top">vars-on-top</a></td>
+    <td>require `var` declarations be placed at the top of their containing scope</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/wrap-iife">wrap-iife</a></td>
+    <td>require parentheses around immediate `function` invocations</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "any",
+  {
+    "functionPrototypeMethods": true
+  }
+]</pre></td>
+    <td><pre>[
+  "inside",
+  {
+    "functionPrototypeMethods": true
+  }
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/wrap-regex">wrap-regex</a></td>
+    <td>require parenthesis around regex literals</td>
+    <td></td>
+    <td></td>
+    <td><pre></pre></td>
+    <td><pre></pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/yield-star-spacing">yield-star-spacing</a></td>
+    <td>require or disallow spacing around the `*` in `yield*` expressions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "both"
+]</pre></td>
+    <td><pre>[
+  "both"
+]</pre></td>
+  </tr><tr>
+    <td><a href="https://eslint.org/docs/rules/yoda">yoda</a></td>
+    <td>require or disallow "Yoda" conditions</td>
+    <td>error</td>
+    <td>error</td>
+    <td><pre>[
+  "never"
+]</pre></td>
+    <td><pre></pre></td>
+  </tr>
+  </tbody>
+</table>
+    </main>
+  </body>
+</html>
