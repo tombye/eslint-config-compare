@@ -360,13 +360,13 @@
     <td>enforce consistent brace style for blocks</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "1tbs",
   {
     "allowSingleLine": true
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "1tbs",
   {
     "allowSingleLine": false
@@ -377,12 +377,12 @@
     <td>enforce camelcase naming convention</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "properties": "never"
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   {
     "properties": "always"
   }
@@ -392,7 +392,7 @@
     <td>require or disallow trailing commas</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "arrays": "never",
     "objects": "never",
@@ -401,7 +401,7 @@
     "functions": "never"
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "never"
 ]</pre></td>
   </tr><tr>
@@ -430,13 +430,13 @@
     <td>enforce consistent spacing around `*` operators in generator functions</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "before": true,
     "after": true
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "both"
 ]</pre></td>
   </tr><tr>
@@ -453,7 +453,7 @@
     <td>enforce consistent indentation</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   2,
   {
     "SwitchCase": 1,
@@ -478,7 +478,7 @@
     "ignoreComments": false
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "tab",
   {
     "SwitchCase": 1
@@ -501,13 +501,13 @@
     <td>require constructor names to begin with a capital letter</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "newIsCap": true,
     "capIsNew": false
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   {
     "newIsCap": true,
     "capIsNew": true
@@ -581,13 +581,13 @@
     <td>disallow multiple empty lines</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "max": 1,
     "maxEOF": 0
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   {
     "max": 1
   }
@@ -597,10 +597,10 @@
     <td>disallow assignment operators in `return` statements</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "except-parens"
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "always"
 ]</pre></td>
   </tr><tr>
@@ -654,14 +654,14 @@
     <td>disallow unused variables</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "vars": "all",
     "args": "none",
     "ignoreRestSiblings": true
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   {
     "ignoreRestSiblings": true,
     "argsIgnorePattern": "^_$"
@@ -672,14 +672,14 @@
     <td>disallow the use of variables before they are defined</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "functions": false,
     "classes": false,
     "variables": false
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "nofunc"
 ]</pre></td>
   </tr><tr>
@@ -687,12 +687,12 @@
     <td>enforce variables to be declared either together or separately in functions</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "initialized": "never"
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "never"
 ]</pre></td>
   </tr><tr>
@@ -700,7 +700,7 @@
     <td>enforce consistent linebreak style for operators</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "after",
   {
     "overrides": {
@@ -709,7 +709,7 @@
     }
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "after"
 ]</pre></td>
   </tr><tr>
@@ -717,14 +717,14 @@
     <td>require or disallow padding within blocks</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "blocks": "never",
     "switches": "never",
     "classes": "never"
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "never"
 ]</pre></td>
   </tr><tr>
@@ -743,14 +743,14 @@
     <td>enforce the consistent use of either backticks, double, or single quotes</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "single",
   {
     "avoidEscape": true,
     "allowTemplateLiterals": true
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "single",
   {
     "allowTemplateLiterals": true
@@ -761,10 +761,10 @@
     <td>require or disallow semicolons instead of ASI</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "never"
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "always"
 ]</pre></td>
   </tr><tr>
@@ -772,10 +772,10 @@
     <td>enforce consistent spacing before `function` definition opening parenthesis</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "always"
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   {
     "anonymous": "always",
     "named": "never",
@@ -799,7 +799,7 @@
     <td>enforce consistent spacing after the `//` or `/*` in a comment</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "always",
   {
     "line": {
@@ -827,7 +827,7 @@
     }
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "always",
   {
     "line": {
@@ -869,12 +869,12 @@
     <td>enforce comparing `typeof` expressions against valid strings</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "requireStringLiterals": true
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   {
     "requireStringLiterals": false
   }
@@ -884,13 +884,13 @@
     <td>require parentheses around immediate `function` invocations</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "any",
   {
     "functionPrototypeMethods": true
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "inside",
   {
     "functionPrototypeMethods": true
@@ -1027,13 +1027,13 @@
     <td>enforce consistent brace style for blocks</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "1tbs",
   {
     "allowSingleLine": true
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "1tbs",
   {
     "allowSingleLine": false
@@ -1051,12 +1051,12 @@
     <td>enforce camelcase naming convention</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "properties": "never"
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   {
     "properties": "always"
   }
@@ -1087,7 +1087,7 @@
     <td>require or disallow trailing commas</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "arrays": "never",
     "objects": "never",
@@ -1096,7 +1096,7 @@
     "functions": "never"
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "never"
 ]</pre></td>
   </tr><tr>
@@ -1274,13 +1274,13 @@
     <td>enforce consistent spacing around `*` operators in generator functions</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "before": true,
     "after": true
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "both"
 ]</pre></td>
   </tr><tr>
@@ -1353,7 +1353,7 @@
     <td>enforce consistent indentation</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   2,
   {
     "SwitchCase": 1,
@@ -1378,7 +1378,7 @@
     "ignoreComments": false
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "tab",
   {
     "SwitchCase": 1
@@ -1554,13 +1554,13 @@
     <td>require constructor names to begin with a capital letter</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "newIsCap": true,
     "capIsNew": false
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   {
     "newIsCap": true,
     "capIsNew": true
@@ -2111,13 +2111,13 @@
     <td>disallow multiple empty lines</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "max": 1,
     "maxEOF": 0
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   {
     "max": 1
   }
@@ -2332,10 +2332,10 @@
     <td>disallow assignment operators in `return` statements</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "except-parens"
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "always"
 ]</pre></td>
   </tr><tr>
@@ -2557,14 +2557,14 @@
     <td>disallow unused variables</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "vars": "all",
     "args": "none",
     "ignoreRestSiblings": true
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   {
     "ignoreRestSiblings": true,
     "argsIgnorePattern": "^_$"
@@ -2575,14 +2575,14 @@
     <td>disallow the use of variables before they are defined</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "functions": false,
     "classes": false,
     "variables": false
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "nofunc"
 ]</pre></td>
   </tr><tr>
@@ -2722,12 +2722,12 @@
     <td>enforce variables to be declared either together or separately in functions</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "initialized": "never"
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "never"
 ]</pre></td>
   </tr><tr>
@@ -2744,7 +2744,7 @@
     <td>enforce consistent linebreak style for operators</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "after",
   {
     "overrides": {
@@ -2753,7 +2753,7 @@
     }
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "after"
 ]</pre></td>
   </tr><tr>
@@ -2761,14 +2761,14 @@
     <td>require or disallow padding within blocks</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "blocks": "never",
     "switches": "never",
     "classes": "never"
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "never"
 ]</pre></td>
   </tr><tr>
@@ -2866,14 +2866,14 @@
     <td>enforce the consistent use of either backticks, double, or single quotes</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "single",
   {
     "avoidEscape": true,
     "allowTemplateLiterals": true
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "single",
   {
     "allowTemplateLiterals": true
@@ -2963,10 +2963,10 @@
     <td>require or disallow semicolons instead of ASI</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "never"
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "always"
 ]</pre></td>
   </tr><tr>
@@ -3006,10 +3006,10 @@
     <td>enforce consistent spacing before `function` definition opening parenthesis</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "always"
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   {
     "anonymous": "always",
     "named": "never",
@@ -3051,7 +3051,7 @@
     <td>enforce consistent spacing after the `//` or `/*` in a comment</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "always",
   {
     "line": {
@@ -3079,7 +3079,7 @@
     }
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "always",
   {
     "line": {
@@ -3189,12 +3189,12 @@
     <td>enforce comparing `typeof` expressions against valid strings</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   {
     "requireStringLiterals": true
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   {
     "requireStringLiterals": false
   }
@@ -3211,13 +3211,13 @@
     <td>require parentheses around immediate `function` invocations</td>
     <td class="set1Cell both-set">error</td>
     <td class="set2Cell both-set">error</td>
-    <td class="set1Cell both-set"><pre>[
+    <td class="set1Cell has-differences"><pre>[
   "any",
   {
     "functionPrototypeMethods": true
   }
 ]</pre></td>
-    <td class="set2Cell both-set"><pre>[
+    <td class="set2Cell has-differences"><pre>[
   "inside",
   {
     "functionPrototypeMethods": true
